@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "techcube.uuid", "Source\techcube.uuid.csproj", "{37B434BA-1754-411E-9029-FACBEC16E287}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "techcube.uuid.Test", "Tests\techcube.uuid.Test\techcube.uuid.Test.csproj", "{8399CDDC-DB44-4996-B199-AED4F75709D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8399CDDC-DB44-4996-B199-AED4F75709D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8399CDDC-DB44-4996-B199-AED4F75709D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8399CDDC-DB44-4996-B199-AED4F75709D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8399CDDC-DB44-4996-B199-AED4F75709D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37B434BA-1754-411E-9029-FACBEC16E287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37B434BA-1754-411E-9029-FACBEC16E287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37B434BA-1754-411E-9029-FACBEC16E287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37B434BA-1754-411E-9029-FACBEC16E287}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
