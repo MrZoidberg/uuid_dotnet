@@ -62,4 +62,22 @@ bytes      	12              13              14              15
 
 ## Benchmarks
 
+``` ini
+
+BenchmarkDotNet=v0.13.1, OS=Windows 10.0.22000
+AMD Ryzen 7 5800X, 1 CPU, 16 logical and 8 physical cores
+.NET SDK=5.0.400
+  [Host]   : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT  [AttachedDebugger]
+  .NET 5.0 : .NET 5.0.9 (5.0.921.35908), X64 RyuJIT
+
+Job=.NET 5.0  Runtime=.NET 5.0  
+
+```
+
+|                                Method |       Mean |    Error |   StdDev | Ratio | RatioSD |
+|-------------------------------------- |-----------:|---------:|---------:|------:|--------:|
+| &#39;UUIDv7 new instance generation test&#39; | 1,642.8 ns | 17.82 ns | 15.79 ns | 12.36 |    0.17 |
+|   &#39;GUID new instance generation test&#39; |   133.0 ns |  1.12 ns |  1.05 ns |  1.00 |    0.00 |
+
 ## Contribution
+

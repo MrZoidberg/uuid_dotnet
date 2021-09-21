@@ -31,14 +31,14 @@ namespace techcube.uuid
         private static long lastSequence;
         private static long sequenceCounter;
 
-        //public static readonly UUIDv7 Empty = EmptyUuid();
+        public static readonly UUIDv7 Empty = EmptyUuid();
 
         private readonly UInt32 secPart;
         private readonly int subSecPart;
         private readonly long counterPart;
         private readonly byte versionPart;
         private readonly byte variantPart;
-        private readonly byte[] randomStringPart;
+        private readonly byte[] randomPart;
         private readonly byte[] uuidBytes;
 
         public DateTimeOffset Timestamp
@@ -64,6 +64,9 @@ namespace techcube.uuid
         public byte Version => versionPart;
 
         public byte Variant => variantPart;
+
+        public byte[] RandomBytes => randomPart;
+        
         public UUIDv7(ReadOnlySpan<byte> bytes)
         {
             if ((uint)bytes.Length != 16)
@@ -84,15 +87,15 @@ namespace techcube.uuid
             counterPart = bits.CopySlice(len - SecBits - 12 - 4 - 12 - VariantBits - 6 - SequenceBits, SequenceBits).ReadByte();
             versionPart = bits.CopySlice(len - SecBits - 12 - VersionBits, VersionBits).ReadByte();
             variantPart = bits.CopySlice(len - SecBits - 12 - 4 - 12 - VariantBits, VariantBits).ReadByte();
-            randomStringPart = bits.CopySlice(0, NodeBits).ToBytesSpan().ToArray();
+            randomPart = bits.CopySlice(0, NodeBits).ToBytesSpan().ToArray();
         }
 
-        private UUIDv7(UInt32 sec, int subSec, long counter, byte[] randomString, byte version, byte variant, byte[] uuid)
+        private UUIDv7(UInt32 sec, int subSec, long counter, byte[] random, byte version, byte variant, byte[] uuid)
         {
             secPart = sec;
             subSecPart = subSec;
             counterPart = counter;
-            randomStringPart = randomString;
+            randomPart = random;
             uuidBytes = uuid;
             versionPart = version;
             variantPart = variant;
@@ -113,7 +116,7 @@ namespace techcube.uuid
             g = (UUIDv7)other;
 
             // Now compare each of the elements
-            return g.secPart == secPart && g.subSecPart == subSecPart && g.counterPart == counterPart && g.randomStringPart == randomStringPart;
+            return g.secPart == secPart && g.subSecPart == subSecPart && g.counterPart == counterPart && g.randomPart == randomPart;
         }
 
         public override int GetHashCode()

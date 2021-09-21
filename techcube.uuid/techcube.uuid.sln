@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "techcube.uuid", "Source\tec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "techcube.uuid.Test", "Tests\techcube.uuid.Test\techcube.uuid.Test.csproj", "{8399CDDC-DB44-4996-B199-AED4F75709D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "techcube.uuid.PerfTests", "Tests\techcube.uuid.PerfTests\techcube.uuid.PerfTests.csproj", "{910E9D83-91A2-407E-BFE2-8BB65C918D8A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleApp", "Tests\SampleApp\SampleApp.csproj", "{EF1D31CF-874E-49E5-B652-BA5BA3592D1D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{37B434BA-1754-411E-9029-FACBEC16E287}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{37B434BA-1754-411E-9029-FACBEC16E287}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{37B434BA-1754-411E-9029-FACBEC16E287}.Release|Any CPU.Build.0 = Release|Any CPU
+		{910E9D83-91A2-407E-BFE2-8BB65C918D8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{910E9D83-91A2-407E-BFE2-8BB65C918D8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{910E9D83-91A2-407E-BFE2-8BB65C918D8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{910E9D83-91A2-407E-BFE2-8BB65C918D8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF1D31CF-874E-49E5-B652-BA5BA3592D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF1D31CF-874E-49E5-B652-BA5BA3592D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF1D31CF-874E-49E5-B652-BA5BA3592D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF1D31CF-874E-49E5-B652-BA5BA3592D1D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

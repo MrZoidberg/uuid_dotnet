@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Buffers.Binary;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
 
 [assembly:InternalsVisibleTo("techcube.uuid.Test")]
 
@@ -12,8 +9,6 @@ namespace techcube.uuid
 {
     internal static class ByteUtils
     {
-        
-        
         public static BitArray BitStringToBitArray(string bitString, bool MSB = false)
         {
             BitArray bitArray = new(bitString.Length);
@@ -28,14 +23,23 @@ namespace techcube.uuid
 
         public static byte[] BitStringToByteArray(string bitString, bool MSB = false)
         {
-            BitArray bitArray = new(bitString.Length);
-
+            //return BitStringToBitArray(bitString, MSB).ToBytesSpan();
+            byte[] bytes = new byte[bitString.Length / 8];
             for (int i = 0; i < bitString.Length; i++)
             {
-                bitArray.Set(i, bitString[MSB ? i : bitString.Length - 1 - i] == '1');
+                int byteIndex = i / 8;
+                int bitInByteIndex = i % 8;
+                byte mask = (byte)(1 << bitInByteIndex);
+                bool value = bitString[MSB ? i : bitString.Length - 1 - i] == '1';
+                if (value)
+                {
+                    bytes[byteIndex] |= mask;
+                }
             }
 
-            return bitArray.ToBytes(MSB).ToArray();
+            return bytes;
+
+
         }
 
         private static readonly uint[] Lookup32 = CreateLookup32();

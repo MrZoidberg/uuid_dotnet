@@ -29,7 +29,7 @@ namespace techcube.uuid.Test
                 var uuid = UUIDv7.NewUuid();
                 string uuidString = uuid.ToString();
                 uuid.Version.Should().Be(7);
-                
+
                 masterDict[i] = uuid;
 
                 var bytes = uuid.ToByteArray();
@@ -39,36 +39,8 @@ namespace techcube.uuid.Test
                 uuid.TimestampNs.Should().Be(uuid2.TimestampNs);
                 uuid.Version.Should().Be(uuid2.Version);
                 uuid.Variant.Should().Be(uuid2.Variant);
+                uuid.RandomBytes.Should().Equal(uuid2.RandomBytes);
             }
-        }
-
-        [Fact]
-        public void PerTest()
-        {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Start();
-
-            string str;
-            for (int i = 0; i < 1000000; i++)
-            {
-                var uuid = UUIDv7.NewUuid();
-                str = uuid.ToString();
-            }
-            
-            stopwatch.Stop();
-            output.WriteLine("UUIDv7 perf: " + stopwatch.ElapsedMilliseconds);
-            
-            stopwatch.Reset();
-            stopwatch.Start();
-
-            for (int i = 0; i < 1000000; i++)
-            {
-                var guid = Guid.NewGuid();
-                str = guid.ToString();
-            }
-            
-            stopwatch.Stop();
-            output.WriteLine("GUID perf: " + stopwatch.ElapsedMilliseconds);
         }
     }
 }
