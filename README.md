@@ -79,5 +79,10 @@ Job=.NET 5.0  Runtime=.NET 5.0
 | &#39;UUIDv7 new instance generation test&#39; | 1,642.8 ns | 17.82 ns | 15.79 ns | 12.36 |    0.17 |
 |   &#39;GUID new instance generation test&#39; |   133.0 ns |  1.12 ns |  1.05 ns |  1.00 |    0.00 |
 
+|                         Method |       Mean |    Error |    StdDev |     Median | Ratio | RatioSD |
+|------------------------------- |-----------:|---------:|----------:|-----------:|------:|--------:|
+| &#39;UUIDv7 parse byte array test&#39; | 3,302.2 ns | 77.95 ns | 218.57 ns | 3,300.0 ns | 23.91 |    8.29 |
+|   &#39;GUID parse byte array test&#39; |   155.0 ns | 16.96 ns |  50.00 ns |   200.0 ns |  1.00 |    0.00 |
+
 ## Contribution
 

@@ -8,6 +8,8 @@ namespace techcube.uuid.PerfTests
         static void Main(string[] args)
         {
             BenchmarkRunner.Run<NewInstancePerfTests>();
+            BenchmarkRunner.Run<ParseByteArrayPerfTests>();
+            
         }
     }
 }
