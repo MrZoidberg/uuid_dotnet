@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Buffers;
 using System.Buffers.Binary;
 using System.Collections;
 using System.Runtime.CompilerServices;
@@ -59,7 +60,7 @@ namespace techcube.uuid
         public static string ByteArrayToHexViaLookup32(byte[] bytes)
         {
             var lookup32 = Lookup32;
-            var result = new char[bytes.Length * 2];
+            var result = ArrayPool<char>.Shared.Rent(bytes.Length * 2);
             for (int i = 0; i < bytes.Length; i++)
             {
                 var val = lookup32[bytes[i]];
@@ -67,7 +68,9 @@ namespace techcube.uuid
                 result[2 * i + 1] = (char)(val >> 16);
             }
 
-            return new string(result);
+            var ret = new string(result);
+            ArrayPool<char>.Shared.Return(result);
+            return ret;
         }
     }
 }

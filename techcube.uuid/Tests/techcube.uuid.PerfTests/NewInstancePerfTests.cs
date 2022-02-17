@@ -4,6 +4,7 @@ using BenchmarkDotNet.Jobs;
 
 namespace techcube.uuid.PerfTests
 {
+    [MemoryDiagnoser]
     [SimpleJob(RuntimeMoniker.Net50)]
     public class NewInstancePerfTests
     {
