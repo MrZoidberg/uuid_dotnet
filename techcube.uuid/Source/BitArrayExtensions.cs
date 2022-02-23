@@ -10,7 +10,7 @@ namespace techcube.uuid
     {
         public static string ToBitString(this BitArray bits)
         {
-            var sb = new StringBuilder();
+            var sb = new StringBuilder(bits.Count);
 
             for (int i = bits.Count - 1; i >= 0; i--)
             {
